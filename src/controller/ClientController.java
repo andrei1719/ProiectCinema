@@ -17,18 +17,21 @@ public class ClientController {
 
     }
 
-//    public void insertrezervare(int id, String nume, String film, int sala, Date data, int rand, int loc){
-//        Optional<Client> optional = clientDao.getClientByLoc(rand, loc);
-//        if(optional.isEmpty()) {
-//            clientDao.insertRezervare(id, nume, film, sala, data, rand, loc);
-//            System.out.println("S a adaugat o rezervare");
-//        } else {
-//            System.out.println("Locurile sunt ocupate");
-//        }
-//    }
+    public void insertrezervare( String nume, String film, int ora, Date data, int rand, int loc){
+        clientDao.insertRezervare(nume,film,ora,data,rand,loc);
+    }
 
     public List<Client> getClientByFilmSiOra(String film , int ora) {
        return clientDao.getClientByFilmSiOra(film, ora);
     }
+
+    public void stergeRezervareaByNume(String nume) {
+        clientDao.stergeRezervareaByNume(nume);
+    }
+
+    public List<Client> getReservationByName(String nume) {
+        return clientDao.getReservationByName(nume);
+    }
+
 
 }
