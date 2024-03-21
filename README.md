@@ -1,2 +1,2 @@
 User is "a" 
-Passowrd is "1"
+Passowrod is "1"
